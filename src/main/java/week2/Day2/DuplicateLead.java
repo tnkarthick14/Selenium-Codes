@@ -3,7 +3,7 @@ package week2.Day2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class DeleteLead {
+public class DuplicateLead {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -27,25 +27,34 @@ public class DeleteLead {
 		driver.findElementByXPath("//button[text()='Find Leads']").click();
 		Thread.sleep(5000); 
 		//String text1 = driver.findElementByXPath("//table[@class='x-grid3-row-table']//a").getText();
-		 // System.out.println("Current Lead : " + text1);
+		// System.out.println("Current Lead : " + text1);
 		WebElement element1 = driver.findElementByXPath("//table[@class='x-grid3-row-table']//a");
 		String text1 = element1.getText();
-		System.out.println("Current Lead : " + text1);
+		WebElement element2 = driver.findElementByXPath("(//div[@class='x-grid3-cell-inner x-grid3-col-firstName'])[1]");
+		String text2 = element2.getText();
+		System.out.println("Current Lead : " + text1 + "\t" + text2); 
 		element1.click();
 		//a[text()='Delete']
-		driver.findElementByXPath("//a[text()='Delete']").click();
+		driver.findElementByXPath("//a[text()='Duplicate Lead']").click();
 		Thread.sleep(2000);
-		driver.findElementByXPath("//a[text()='Find Leads']").click();
-		Thread.sleep(2000);
-		WebElement element2 = driver.findElementByXPath("//label[text()='Lead ID:']/following::input");
-		element2.click();
-		element2.sendKeys(text1);
-		driver.findElementByXPath("//button[text()='Find Leads']").click();
-		Thread.sleep(2000); //
-		String text2 = driver.findElementByXPath("//div[@class='x-toolbar x-small-editor']//div").getText();
-		System.out.println("Search Results for " + text1 + " : " + text2);
-		//driver.close();
-		
+		WebElement element3 = driver.findElementByXPath("//div[text()='Duplicate Lead']");
+		String text3 = element3.getText();
+		System.out.println("Title is : " + text3);
+		driver.findElementByXPath("//input[@value='Create Lead']").click();
+		WebElement element4 = driver.findElementByXPath("(//span[text()='First name']/following::span)[1]");
+		String text4 = element4.getText();
+		System.out.println("Duplicated Lead : " + text4); 
+		int compareName = text2.compareTo(text4);
+		if(compareName==0)
+		{
+			System.out.println("the duplicated lead name is same as captured name");
+		}
+		else
+		{
+			System.out.println("the duplicated lead name is same as captured name");
+		}
+
+		driver.close();
 	}
 
 }
