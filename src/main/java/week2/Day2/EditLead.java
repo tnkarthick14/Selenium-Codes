@@ -22,7 +22,7 @@ public class EditLead {
 		Thread.sleep(3000); 
 		driver.findElementByXPath("//span[text()='Email']").click();
 		Thread.sleep(1000);
-		driver.findElementByXPath("//label[text()='Email Address:']/following::input").sendKeys("xyz@gmail.com");
+		driver.findElementByXPath("//label[text()='Email Address:']/following::input").sendKeys("test@gmail.com");
 		Thread.sleep(1000);
 		driver.findElementByXPath("//button[text()='Find Leads']").click();
 		Thread.sleep(5000); 
@@ -32,18 +32,22 @@ public class EditLead {
 		Thread.sleep(3000);
 		String title = driver.getTitle();
 		System.out.println(title); 
-		WebElement click1 = driver.findElementByXPath("//span[text()='Company Name']/following::input");
-		System.out.println("Company Name : " );
-		String text = click1.getText();
-			click1.clear();
-		click1.sendKeys("Microsoft");
+		WebElement cmp1 = driver.findElementByXPath("(//input[@name='companyName'])[2]");
+		// //span[text()='Company Name']/following::input
+		Thread.sleep(1000);
+		String text = cmp1.getAttribute("value");
+		Thread.sleep(1000);
+		System.out.println("Company Name : " +  text);
+		Thread.sleep(1000);
+		cmp1.clear();
+		cmp1.sendKeys("AMD");
 		Thread.sleep(3000);
 		driver.findElementByXPath("//input[@value='Update']").click();
 		Thread.sleep(3000);
-		WebElement click2 = driver.findElementByXPath("//span[text()='Company Name']/following::input");
+		WebElement cmp2 = driver.findElementByXPath("(//input[@name='companyName'])[2]");
+		String text2 = cmp2.getAttribute("value");
 		Thread.sleep(1000);
-		System.out.println("Changed Company Name : " + click2.getText());
-		
+		System.out.println("Changed Company Name : " + text2);
 		driver.close();
 		
 		
