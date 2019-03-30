@@ -24,7 +24,7 @@ public class EditLead {
 		Thread.sleep(1000);
 		driver.findElementByXPath("//label[text()='Email Address:']/following::input").sendKeys("test@gmail.com");
 		Thread.sleep(1000);
-		driver.findElementByXPath("//button[text()='Find Leads']").click();
+		/*driver.findElementByXPath("//button[text()='Find Leads']").click();
 		Thread.sleep(5000); 
 		driver.findElementByXPath("//table[@class='x-grid3-row-table']//a").click();
 		Thread.sleep(3000);
@@ -54,7 +54,7 @@ public class EditLead {
 		
 		
 		
-		
+*/		
 	}
 
 }
