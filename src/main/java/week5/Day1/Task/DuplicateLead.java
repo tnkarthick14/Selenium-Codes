@@ -1,21 +1,14 @@
-package week2.Day2;
+package week5.Day1.Task;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
-public class DuplicateLead {
+import week5.Day1.Task.MyUtil.ProjectMethod;
 
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
-		ChromeDriver driver = new ChromeDriver();
-		driver.get("http://leaftaps.com/opentaps");
-		driver.manage().window().maximize();
-		driver.findElementById("username").sendKeys("DemoSalesManager");
-		driver.findElementById("password").sendKeys("crmsfa");
-		driver.findElementByClassName("decorativeSubmit").click();
-		driver.findElementByLinkText("CRM/SFA").click();
-		Thread.sleep(3000);
+public class DuplicateLead extends ProjectMethod {
+	@Test
+	public void dupLead() throws InterruptedException {
 		driver.findElementByXPath("//a[text()='Leads']").click();
 		Thread.sleep(1000); 
 		driver.findElementByXPath("//a[text()='Find Leads']").click();
@@ -54,7 +47,6 @@ public class DuplicateLead {
 			System.out.println("The duplicated lead name is same as captured name");
 		}
 
-		driver.close();
 	}
 
 }

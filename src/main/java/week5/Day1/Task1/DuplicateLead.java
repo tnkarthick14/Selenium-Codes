@@ -1,4 +1,4 @@
-package week2.Day2;
+package week5.Day1.Task1;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
