@@ -3,14 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="week5.Day2.Task.DuplicateLead">
+      <class name="week6.Day1.LearnCucumber.RunnerClass.Login1">
         <methods>
-          <include name="setData"/>
-          <include name="startAPP"/>
-          <include name="dupLead"/>
-          <include name="CloseApp"/>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- week5.Day2.Task.DuplicateLead -->
+      </class> <!-- week6.Day1.LearnCucumber.RunnerClass.Login1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

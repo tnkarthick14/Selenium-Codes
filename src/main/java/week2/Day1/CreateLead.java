@@ -7,9 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class CreateLead {
-
+	
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
+		
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		ChromeDriver driver = new ChromeDriver();
 		driver.get("http://leaftaps.com/opentaps");
@@ -41,7 +42,7 @@ public class CreateLead {
 		Thread.sleep(3000);
 		driver.close();
 
-
+		
 
 
 	}
